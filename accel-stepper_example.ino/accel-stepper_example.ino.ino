@@ -6,7 +6,7 @@ const int dirPin = 2;
 const int stepPin = 3;
 
 // Define motor interface type
-#define motorInterfaceType 1
+#define motorInterfaceType AccelStepper::DRIVER //4 is full 4 wire, 1 is driver
 
 // Creates an instance
 AccelStepper myStepper(motorInterfaceType, stepPin, dirPin);
