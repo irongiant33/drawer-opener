@@ -11,10 +11,9 @@ const unsigned long DEBOUNCE_DELAY = 50; //debounce time in milliseconds; increa
 const int INITIAL_LED_STATE = LOW;       
 const int INITIAL_SWITCH_STATE = LOW;
 const int MOTOR_INTERFACE_TYPE = AccelStepper::DRIVER;
-const int CALIBRATION_SPEED = 200;
+const int CALIBRATION_SPEED = 500;
 const int OPERATIONAL_SPEED = 4000;
 const int ACCELERATION = 100;
-const int STOP_ACCELERATION = 300;
 const int STEP_SIZE = 10;
 
 //global structs
@@ -57,9 +56,7 @@ void setup() {
 long stop_now()
 {
   long current_position = myStepper.currentPosition();
-  //myStepper.setAcceleration(direction * - 1 * STOP_ACCELERATION);
   myStepper.stop();
-  //myStepper.runToPosition();
   return current_position;
 }
 
